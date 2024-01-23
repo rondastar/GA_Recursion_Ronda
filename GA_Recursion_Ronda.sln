@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34511.84
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GA_Recursion_Ronda", "GA_Recursion_Ronda.csproj", "{571DC91F-1A98-46A3-84E3-67B1D5B32672}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{571DC91F-1A98-46A3-84E3-67B1D5B32672}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{571DC91F-1A98-46A3-84E3-67B1D5B32672}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{571DC91F-1A98-46A3-84E3-67B1D5B32672}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{571DC91F-1A98-46A3-84E3-67B1D5B32672}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3F25A1DE-7DB3-404E-9965-C8ED22CA1275}
+	EndGlobalSection
+EndGlobal
