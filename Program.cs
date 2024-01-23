@@ -4,9 +4,33 @@
     {
         static void Main(string[] args)
         {
-            // Tests
+            // Test PrintNumbersFrom1To10
             PrintNumbersFrom1To10(1);
+
+            // Test CountDownAndUp
             CountDownAndUp(5);
+
+            // Test CalculateSum
+            int[] numbers = { 12, 45, 7, 23, 9 }; // Adding 5 hardcoded numbers to the array
+
+            Console.WriteLine("Array elements:");
+            foreach (int num in numbers)
+            {
+                Console.Write(num + " ");
+            }
+
+            int sum = CalculateSum(numbers, 0);
+            Console.WriteLine($"\nSum of the array elements: {sum}");
+
+            // Test Fibonacci
+            int n = 10; // Change n to the desired Fibonacci sequence length
+            Console.WriteLine($"Fibonacci sequence of length {n}:");
+            for (int i = 0; i < n; i++)
+            {
+                int result = Fibonacci(i);
+                Console.Write(result + " ");
+            }
+
         }
 
         // PrintNumbersFrom1To10 - Step by Step
@@ -50,7 +74,34 @@
         }
 
         // CalculateSum - working with arrays
+        static int CalculateSum(int[] arr, int index)
+        {
+            // Base Case: If the index is equal to the array length, return 0 (no elements to add)
+            if (index == arr.Length)
+            {
+                return 0;
+            }
+            else
+            {
+                // Recursive Case:
+                // Add the current element (at the current index) to the sum of the rest of the elements
+                int currentElement = arr[index];
+                int restOfTheSum = CalculateSum(arr, index + 1);
+                return currentElement + restOfTheSum;
+            }
+        }
 
         // Fibonacci
+        static int Fibonacci(int n)
+        {
+            if (n <= 1)
+            {
+                return n;
+            }
+            else
+            {
+                return Fibonacci(n - 1) + Fibonacci(n - 2);
+            }
+        }
     }
 }
