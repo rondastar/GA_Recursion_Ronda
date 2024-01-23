@@ -23,7 +23,7 @@
             Console.WriteLine($"\nSum of the array elements: {sum}");
 
             // Test Fibonacci
-            int n = 10; // Change n to the desired Fibonacci sequence length
+            int n = 9; // Change n to the desired Fibonacci sequence length
             Console.WriteLine($"Fibonacci sequence of length {n}:");
             for (int i = 0; i < n; i++)
             {
@@ -37,20 +37,19 @@
         static void PrintNumbersFrom1To10(int currentNumber)
         {
             // Check if the current number is less than or equal to 10
+            // This is the base case - ensures we don't continue indefinitely
             // If true, proceed with the following steps.
-            if (currentNumber <= 10) // Base case ensures we don't continue indefinitely
+            if (currentNumber <= 10) 
             {
                 // Print the current number
                 Console.WriteLine(currentNumber);
 
-                // Increase the current number by 1
+                // Increase the current number by 1 to determine the next number
                 int nextNumber = currentNumber + 1;
 
                 // Recursively call the function with the next number
                 PrintNumbersFrom1To10(nextNumber);
-
-                // When the recursion passes 10, it stops automatically. (Base case exit)
-            }
+            } // When the recursion passes 10, it stops automatically. (Base case)
         }
 
         // CountDownAndUp - Call Stack
@@ -61,16 +60,16 @@
             {
                 Console.WriteLine($"Before Recursive Call: {currentNumber}");
 
-                // Recursive Call: Recursively count down
+                // Recursive Call: Recursively count down - calls the method with the next lower number
                 CountDownAndUp(currentNumber - 1);
 
                 Console.WriteLine($"After Recursive Call: {currentNumber}");
                 // Print the same number while counting up
-
                 // Because the code after the recursive call is not reached until after all of the recursive calls, 
                 // each number is printed in reverse order of how they were called, effectively counting up.
-                // If too many recursive calls are made, it can cause a stack overflow
-            }
+
+                // Note: If too many recursive calls are made, it can cause a stack overflow
+            } // if: only runs if current number is 1 or greater (base case)
         }
 
         // CalculateSum - working with arrays
@@ -87,21 +86,31 @@
                 // Add the current element (at the current index) to the sum of the rest of the elements
                 int currentElement = arr[index];
                 int restOfTheSum = CalculateSum(arr, index + 1);
+                
+                // The sum is returned after all recursive calls.
                 return currentElement + restOfTheSum;
             }
         }
 
-        // Fibonacci
+        // Fibonacci - Each number is the sum of the two that precede it
+        // returns the first n digits of the Fibonacci sequence
+        // 
         static int Fibonacci(int n)
         {
+            // base case - returns n if n is 1 or 0 (the first two numbers in the Fibonacci sequence)
             if (n <= 1)
             {
                 return n;
             }
             else
             {
+                // Calculates the Fibonacci number by adding the previous two numbers in the sequence
+                // The recursive call breaks the problem down into smaller sub-problems
                 return Fibonacci(n - 1) + Fibonacci(n - 2);
             }
+
+            // Note: This code takes exponentially more processing power
+            // depending on how many numbers in the sequence are requested!
         }
     }
 }
